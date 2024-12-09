@@ -1,0 +1,27 @@
+# Python-related files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# SQLite database
+*.db
+
+# Environment variables (if any)
+.env
+
+# Docker-related files
+*.log
+*.pid
+*.sock
+*.swp
+docker-compose.override.yml
+
+# System-specific files
+.DS_Store  # macOS specific
+Thumbs.db  # Windows specific
+
+# Node.js (if using npm or yarn for frontend)
+node_modules/
+npm-debug.log
+yarn-error.log

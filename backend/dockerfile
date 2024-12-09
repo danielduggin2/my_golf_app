@@ -1,0 +1,23 @@
+# Use a slim version of Python 3.9
+FROM python:3.9-slim
+
+# Set the working directory to /app inside the container
+WORKDIR /app
+
+# Copy the backend files (from the current context inside the backend folder)
+COPY requirements.txt /app/requirements.txt
+COPY app.py /app/app.py
+COPY database.db /app/database.db
+
+# Copy the frontend files (templates and static files, now inside the backend folder)
+COPY templates /app/templates
+COPY static /app/static
+
+# Install Python dependencies
+RUN pip install -r requirements.txt
+
+# Expose port 5001 for Flask
+EXPOSE 5001
+
+# Run the Flask app
+CMD ["python", "app.py"]
